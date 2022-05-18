@@ -64,7 +64,7 @@ CREATE INDEX index_1 ON client(cli_nom);
 ☝️Numero 1 : 
 ------------------------------------------------------------------------------------------
 SELECT CompanyName,ContactName,ContactTitle,Phone FROM customers WHERE Country = 'France';
-------------------------------------------------------------------------------------------
+
 
 
 ☝️Numero 2 : 
@@ -72,15 +72,69 @@ SELECT CompanyName,ContactName,ContactTitle,Phone FROM customers WHERE Country =
 SELECT ProductName,UnitPrice FROM products
 NATURAL JOIN suppliers
 WHERE supplierID = '1'
-------------------------------------------
 
 
 ☝️Numero 3 : 
 ------------------------------------------
+SELECT suppliers.CompanyName, (SELECT COUNT(*) FROM products WHERE products.SupplierID = suppliers.SupplierID) as Nbr_produits FROM products, suppliers
+WHERE suppliers.country = 'France'
+GROUP BY suppliers.CompanyName
+ORDER BY Nbr_produits DESC;
+
+
+☝️Numero 4 : 
+------------------------------------------
+SELECT customers.CompanyName as client , (SELECT COUNT(*) FROM orders WHERE customers.CustomerID = orders.CustomerID) as Nbr_commande
+FROM orders, customers
+WHERE LOWER(customers.Country) = "france"
+GROUP BY customers.ContactName HAVING Nbr_commande > 10;
 
 
 
+☝️Numero 5 : 
+------------------------------------------
+SELECT customers.CompanyName, SUM(`order details`.`UnitPrice` * `order details`.`Quantity`) as CA, customers.Country FROM `order details`, orders, customers
+WHERE orders.OrderID = `order details`.`OrderID`
+AND orders.CustomerID = customers.CustomerID
+GROUP BY customers.CustomerID
+HAVING CA > 10000
+ORDER BY CA DESC;
 
+
+☝️Numero 6 : 
+------------------------------------------
+SELECT DISTINCT(customers.Country) FROM `order details`, customers, suppliers, orders, products
+WHERE `order details`.`OrderID`= orders.OrderID
+AND orders.CustomerID = customers.CustomerID
+AND `order details`.ProductID = products.ProductID
+AND products.SupplierID=suppliers.SupplierID
+AND LOWER(suppliers.CompanyName)="exotic liquids" ORDER BY customers.Country ASC;
+
+
+☝️Numero 7 : 
+------------------------------------------
+SELECT SUM(`order details`.`UnitPrice` * `order details`.`Quantity`) as CA FROM `order details`, orders
+WHERE orders.OrderID = `order details`.`OrderID`
+AND orders.OrderDate LIKE '%1997%';
+
+
+☝️Numero 8 : 
+------------------------------------------
+SELECT MONTH(orders.OrderDate) as mois, SUM(`order details`.`UnitPrice` * `order details`.`Quantity`) as CA FROM `order details`, orders
+WHERE orders.OrderID = `order details`.`OrderID`
+AND orders.OrderDate LIKE '%1997%'
+    GROUP BY mois;
+    
+    
+☝️Numero 9 : 
+------------------------------------------
+SELECT orders.OrderDate FROM orders, customers
+WHERE orders.CustomerID = customers.CustomerID
+    AND LOWER(customers.CompanyName) = "du monde entier"
+    ORDER BY orders.Ord
+
+☝️Numero 10 : 
+------------------------------------------
 
 
 
