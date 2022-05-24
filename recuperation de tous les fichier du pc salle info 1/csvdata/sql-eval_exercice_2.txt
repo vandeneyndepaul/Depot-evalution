@@ -1,0 +1,88 @@
+Exercice 1 : 
+
+
+
+SELECT CompanyName,ContactName,ContactTitle,Phone FROM customers WHERE Country = 'France';
+
+
+
+
+Exercice 2 :
+
+
+
+SELECT ProductName,UnitPrice FROM products
+NATURAL JOIN suppliers
+WHERE supplierID = '1'
+
+
+
+
+
+Exercice 3 :
+
+
+
+
+
+
+
+Exercice 4 :
+
+
+
+
+
+
+
+Exercice 5 :
+
+
+
+
+
+
+
+Exercie 6 :
+
+
+
+
+
+
+Exercie 7 :
+
+
+
+
+
+
+
+
+
+Exercie 8 :
+
+
+
+
+
+
+
+
+
+Exercie 9 :
+
+
+
+
+
+
+
+
+
+Exercie 10 :
+
+
+
+
+

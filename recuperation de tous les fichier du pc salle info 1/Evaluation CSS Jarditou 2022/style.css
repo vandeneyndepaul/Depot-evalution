@@ -1,0 +1,104 @@
+
+@media screen and (max-width: 576px) {
+
+    #Image_Logo{width: 50%;}
+
+
+    h1#Tout_Le_Jardin{float: right;
+                      margin-top: 6%;
+                      margin-right: 10%;  }
+
+    #Barre_Navigation{
+        width: 100%;
+        padding: 1%;
+        background-color: black;}
+        
+    
+    a{color: white;}
+                   
+
+
+    #Image_Promo{width: 100% ; }
+
+    
+
+
+    #Section_Droite{
+        background-color: gray;
+        min-width: 50%;
+        height: 250px;
+        
+        }
+
+
+    h1,h2,p{font-size: small;}
+
+
+
+    .barbecue1,.barbecue2,.barbecue3,.barbecue4,.barbecue5{
+            width: 85px;
+            height: 80px; }
+
+}
+
+
+
+
+
+
+@media screen and (min-width: 576px) {
+
+
+    h1,h2,p{font-size:larger ;}
+    
+
+
+    #Image_Logo{width: 25%;
+                height: auto;}
+
+
+    h1#Tout_Le_Jardin{float: right;
+                      margin-top: 6%;
+                      margin-right: 10%;  }
+
+    #Barre_Navigation{
+        width: 100%;
+        padding: 1%;
+        background-color: black;}
+        
+    
+    a{color: white;}
+                   
+
+
+    #Image_Promo{width: 100% ; }
+
+    
+    
+
+    
+
+    #Barre_Navigation{
+        width: 100%;
+        padding: 1%;
+        background-color: black;}
+        li{display: table-cell;}
+        a{color: white;}
+                   
+
+
+
+        #Section_Droite,#Section_Gauche{
+            display: table-cell;
+        }
+
+
+    #Section_Droite{
+        background-color: gray;
+        min-width: 50%;
+        height: 250px;
+        }
+        
+    .tableau{min-width: 100%;}
+
+}

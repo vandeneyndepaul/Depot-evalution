@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <!-- Encodage UTF-8 pour ajouter l'ensemble des caractères -->
+  <meta charset="UTF-8">
+
+  <!--comment le navigateur doit afficher la page sur différents appareils -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=7">
+
+  <!-- La balise meta-description est très importante en référencement naturel, elle doit être utile, attrayante et persuasive -->
+  <meta name="description" content="Description de mon site" />
+
+  <!--titre de la page-->
+  <title>Contact</title>
+  <!-- Icone de l'onglet en .ico-->
+  <link rel="icon" href="Logo_Afpa.ico" />
+
+  <!--liens feuilles de styles CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Ajout de la police 'Concert One' depuis https://fonts.google.com/ -->
+  <link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+ 
+  <header class="site">
+    <div class="header"> 
+      <div class="logo">
+          <a ><img src="image/logo.jpg" class="imgaside"alt="image essaye" title="logo paul" height="80" width="300"></a>
+      </div>
+      <div class="slogan">
+        <p><h4>Tous le jardin</h4></p> 
+      </div>
+    </div>
+  </header>
+  <!--Barre de nav-->
+  <nav class="menu3">
+      <ul>
+        <li><a href="index.html" title="LienPage1">Accueil</a></li>
+        <li><a href="Page_2_Jarditou.html" title="LienPage2">Tableau</a></li>
+        <li><a href="page_3_Jarditou.html" title="LienPage3">Contact</a></li>
+      </ul>
+    </nav>
+    <!--Corps du site-->
+    <section class="corps" id="corps_page3">
+    <!--image promotion-->
+    <div class="promo">
+      <img src="image/promotion.jpg" class="imgpromo">
+    </div>
+
+    <section class="principale" id="gauche">
+      <h1>Contact</h1>
+       <hr>
+       <p>* Champs requis</p>
+       <form action ="destination.php" method="POST">
+        <fieldset>
+            <legend>Vos coordonnées</legend>
+            <label for="nom">Votre nom* : </label><input type="text" name="nom" id="nom" required><br>
+            <label for="prenom">Votre prénom* : </label><input type="text" name="prenom" id="prenom" required><br>
+            <br></br>
+            <label for="sexe">Sexe* : </label><input type="radio" name="sexe" value="Féminin" id="sexe" required> Femme
+            <input type="radio" name="sexe" value="Masculin"> Homme<br><br>
+            <label for="date">Date de naissance* : </label><input type="date" name="ddn" id="date" required><br>
+            <label for="cp">Code Postal* : </label><input type="text" name="cp" id="cp" required><br>
+            <label for="adresse">Adresse : </label><input type="text" name="adresse" id="adresse"><br>
+            <label for="ville">Ville : </label><input type="text" name="ville" id="ville"><br>
+            <label for="email">Email* : </label><input type="text" name="email" id="email" value="Exemple@messagerie.fr" required>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Votre demande</legend>
+            <label for="demandes">Sujet* : </label>
+            <select name="demandes" id="demandes" size="1">
+                <option disabled selected>Veuillez séléctionner un sujet</option>
+                <option>Mes commandes</option>
+                <option>Question sur un produit</option>
+                <option>Réclamation</option>
+                <option>Autres</option>
+            </select>
+            <br>
+            <label for="question">Votre question* : </label><textarea name="question" id="question" required></textarea><br>
+        </fieldset>
+        <br>
+        <input type=checkbox required> * J'accepte le traitement informatique de ce formulaire<br><br>
+        <input type="submit" value="Envoyer">
+        <input type="submit" value="Annuler">
+      </form>
+    </section>
+  </section>
+
+
+
+  
+<footer>
+  <nav class="menu3">
+       <ul>
+         <li><a href="Index.html" title="LienPage1">Mentions légales</a></li>
+         <li><a href="Index.html" title="LienPage1">Horaires</a></li>
+         <li><a href="Index.html" title="LienPage1">Plan du site</a></li>
+       </ul>
+     </nav>
+ </footer>
+ </body>
+ </html>
+     
