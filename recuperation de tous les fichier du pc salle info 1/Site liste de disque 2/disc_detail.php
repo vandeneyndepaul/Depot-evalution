@@ -33,22 +33,33 @@
 
     <body>
 
-        
-        disque N°<?php echo $mydisc->artist_id ?><br><br>
-        Nom : <?= $mydisc->disc_title ?><br>
-        Annee : <?= $mydisc->disc_year ?><br>
-        image : <?= $mydisc->disc_picture ?><br>
-        label : <?= $mydisc->disc_label?><br>
-        genre : <?= $mydisc->disc_genre ?><br>
-        prix : <?= $mydisc->disc_price ?><br>
-        ID de l'artiste : <?= $mydisc->artist_id ?><br>
-
+    <table class="table-striped">
+ 
+        <thead>
+        <tr></tr></thead>      
+         <tbody>
+        <tr> disque N°<?php echo $mydisc->artist_id ?>
+        <td> Nom : <?= $mydisc->disc_title ?></td></tr>
+        <tr>
+        <td> Annee : <?= $mydisc->disc_year ?></td>
+        <td> image : <?= $mydisc->disc_picture ?></td>
+        <tr>
+        <td> label : <?= $mydisc->disc_label?></td>
+        <tr>
+        <td> genre : <?= $mydisc->disc_genre ?></td>
+        <tr>
+        <td> prix : <?= $mydisc->disc_price ?></td>
+        <tr>
+        <td> ID de l'artiste : <?= $mydisc->artist_id ?></td></tr>
+    
+    </tbody>
+    </table>
         <br><br>
 
         <a href="disc_form.php?id=<?= $mydisc->disc_id ?>">Modifier</a><br><br>
         <a href="script_disc_delete.php?id=<?= $mydisc->disc_id ?>">Supprimer (*ajouter une demande de confirmation en JS</a><br><br>
         <a href="discs.php"><button class="btn-primary btn-lg">Retour à la liste des Disque</button></a>
-    
+   
     
     </body>
 </html>
