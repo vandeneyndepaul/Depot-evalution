@@ -10,7 +10,7 @@ for(let i=0;i>=0;i++){
         if( age!=null){
             console.log("la personne N° "+i+" à "+age+" ans");
             
-                if(age==100){
+                if(age==100 || age>100){
                     centenaire+=1;
                     alert("Le comptage s'arrete car il y a un centenaire.");
                     break;

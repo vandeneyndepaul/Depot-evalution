@@ -1,0 +1,46 @@
+DROP DATABASE IF EXISTS clicom;
+
+CREATE DATABASE clicom;
+
+
+USE clicom;
+
+
+CREATE TABLE client (
+	cli_num INT(11) PRIMARY KEY AUTO_INCREMENT,
+	cli_nom VARCHAR (50) NOT NULL,
+	cli_adresse VARCHAR (50) NOT NULL,
+	cli_tel VARCHAR(30) NOT NULL
+);
+
+
+CREATE TABLE commande (
+	com_num INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	cli_num INT NOT NULL,
+	com_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	com_obs VARCHAR(50),
+	FOREIGN KEY (cli_num) REFERENCES client(cli_num) 
+);
+
+
+CREATE TABLE produit (
+	pro_num INT NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+	pro_libelle VARCHAR (50),
+	pro_decription VARCHAR(50)
+);
+
+
+CREATE TABLE est_compose (
+	com_num INT NOT NULL, 
+	pro_num INT NOT NULL,
+	est_qte INT(11)NOT NULL,  
+	FOREIGN KEY (com_num) REFERENCES commande (com_num),
+	FOREIGN KEY (pro_num) REFERENCES produit (pro_num)	
+);
+
+
+
+CREATE INDEX index_1 ON client(cli_nom);
+
+
+
