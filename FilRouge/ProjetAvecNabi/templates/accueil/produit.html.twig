@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Page Accueil{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <h1>Catégorie de jeux :</h1>
+        <hr>
+        {% for prod in tableau %}
+            <div class="col-5">  
+                <a href=""><img src={{ prod.photo }} alt="sous_categorie" height="150px" width="150px"></a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="row">
+    
+        {% for prod in tableau %}
+        <div class="col-3"></div>
+            <div class="col-3">
+                <h1>{{prod.prix}}</h1>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+{% endblock %}

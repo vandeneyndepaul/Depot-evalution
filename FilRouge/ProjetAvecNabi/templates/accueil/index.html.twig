@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Accueil{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+       <h1>Votre console :</h1>
+        <hr>
+        {% for cat in tableau %}
+            <div class="col-5">  
+                <a href=""><img src={{ cat.imgSource }} alt="categorie" height="400px" width="800px"></a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="row">
+    
+        {% for cat in tableau %}
+        <div class="col-3"></div>
+            <div class="col-3">
+                <h1>{{cat.typeSupport}}</h1>
+            </div>
+        {% endfor %}
+    </div>
+
+     {% for cat in tableau %}
+            <div class="col-5">  
+                <h1>{{ cat.id }}</h1>
+            </div>
+            <a href="/categorie/{{cat.id}}">{{cat.typeSupport}}</a>
+        {% endfor %}
+
+    {# <div class="row">
+        {% for prod in tableau %}
+            <div>  
+                <img src={{ prod.Photo }} alt="produit">
+            </div>
+
+        {% endfor %}
+    </div> #}
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

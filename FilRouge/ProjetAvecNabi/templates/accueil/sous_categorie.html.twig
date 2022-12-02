@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Page Accueil{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <h1>Catégorie de jeux :</h1>
+        <hr>
+        {% for scat1 in tableau %}
+            <div class="col-5">  
+                <a href=""><img src={{ scat1.imgSource }} alt="sous_categorie" height="150px" width="150px"></a>
+            </div>
+        {% endfor %}
+    </div>
+    
+    <div class="row">
+    
+        {% for scat in tableau %}
+        <div class="col-3"></div>
+            <div class="col-3">
+                <h1>{{scat.typeJeux}}</h1>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+{% endblock %}
