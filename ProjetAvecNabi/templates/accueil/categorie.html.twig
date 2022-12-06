@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Page Categorie{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <h1>Catégorie de jeux : {{ categorie.typeSupport }}</h1>
+        <hr>
+
+        {% for scat1 in categorie.sousCategories %}
+            <div class="card" style="width: 18rem;">
+                <a href="/produits/{{scat1.id}}"><img src="/images/{{ scat1.imgSource }}" alt="categorie"></a>
+                <div class="card-body">
+                    <h5 class="card-title"><a href="/produits/{{scat1.id}}">{{ scat1.typeJeux}}</a></h5>
+                    <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ducimusue, adipisci eum corporis cumque nobis dicta!</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

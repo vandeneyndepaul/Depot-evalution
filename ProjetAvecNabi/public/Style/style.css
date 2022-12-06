@@ -1,0 +1,100 @@
+
+.navbarsite {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(90.01deg, rgba(36, 0, 255, 0.46) -9.49%, #0009E0 146.9%) !important;
+}
+
+.perso{
+    height: auto;
+    width: 70%;
+}
+
+.item-accueil{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(90.01deg, rgba(36, 0, 255, 0.46) -9.49%, #0009E0 146.9%);
+    ;
+    border: solid 1px black;
+    width: 100%;
+} 
+
+.img-accueil{
+    height: 70%;
+    width: 50%;
+}
+.console{
+    margin-left: 20%;
+    text-align: justify;
+    font-size: small;
+}
+.lien-console{
+    color: white;
+}
+.disponible {
+    color: green;
+}
+
+
+.disponible span{
+    color: rgb(128, 0, 0);
+}
+
+.card-titre {
+    text-align: center;
+}
+.img-card{
+    margin-top: 25%;
+}
+
+.card{
+    left: 33%;
+}
+
+.start{
+    display: flex;
+    align-items: flex-start;
+}
+
+.bordure{
+   align-items: center;
+}
+
+.border{
+    border: solid 1px black;
+}
+
+.blanc{
+    color: white;
+}
+
+.noir{
+    background-color: gray;
+}
+
+.top{
+    margin-top: 6%;
+}
+.left{
+    margin-left: 5%;
+}
+
+.centre{
+    text-align: center;
+}
+
+.demi{
+    height:fit-content;
+}
+
+.bgcont{
+    background-color: rgb(118, 118, 118);
+    
+}
+
+.container3{
+    align-items: center !important;
+    margin-left: 22.5%;
+}
+
+.foot{
+    background-color: #0009E0;
+}

@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Accueil{% endblock %}
+
+{% block body %}
+
+<div class="container">
+<hr>
+    <h1>Selectionner console :</h1>        
+    <hr>
+    <br>
+    <div class="row item-accueil ">
+        <div class="col-2"></div>
+        {% for cat in tableau %}
+            <div class="col-5">  
+                <a href="/categorie/{{cat.id}}" class="lien-console">
+                    <img src="/images/{{ cat.imgSource }}" alt="categorie" class="img-accueil">
+                    <div class="console">
+                        {{cat.typeSupport}}
+                    </div>
+                </a>
+                    
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<br>
+
+<div class="container3 center">
+  <div class="row">
+    <div class="col-3">
+      <div class="card mb-3 " style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/images/consolePs5.png" class="img-fluid img-card" alt="Ps5">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body card-titre">
+              <h5 class="card-title ">PlayStation®5 2022</h5>
+              <p class="card-text">À partir de €349,00 <br>Prix régulier €749,00</p>
+              <p class="card-text"><h6></h6>STOCK LIMITÉ <br>Découvrez en exclusivité la PlayStation®5 2022 chez E-gamera.</p>
+              <p class="card-text "><small class="disponible">Disponible <br><span>Ruprutre de stocks</span></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="col-3">
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="/images/consoleXbox.png" class="img-fluid" alt="Ps5">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body card-titre">
+              <h5 class="card-title ">Xbox Serie X 2022</h5>
+              <p class="card-text">À partir de €349,00 <br>Prix régulier €749,00</p>
+              <p class="card-text"><h6></h6>STOCK LIMITÉ <br>Découvrez en exclusivité la nouvelle <br> Xbox 2022 chez E-gamera.</p>
+              <p class="card-text "><small class="disponible">Disponible <br><span>Ruprutre de stocks</span></small></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

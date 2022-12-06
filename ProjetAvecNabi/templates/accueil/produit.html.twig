@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Page Accueil{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <h1>Type de jeux : {{soucat.typeJeux}}</h1>
+        <hr>
+        {% for prod in soucat.produits %}
+            <div class="col-5">  
+                <a href="/detailProduit/{{prod.id}}">{{ prod.Nom}}
+                    <img src="/images/{{prod.Photo}}" alt="Produit" height="150px" width="150px">
+                </a>
+            <div class="col-3">
+                <h1>{{prod.prix}}</h1>
+            </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+{% endblock %}
