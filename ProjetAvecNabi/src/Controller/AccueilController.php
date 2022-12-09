@@ -60,16 +60,6 @@ class AccueilController extends AbstractController
         ]);
     }
 
-    #[Route('/panier', name: 'app_Panier')]
-    public function panier(): Response
-    {
-      
-
-        return $this->render('accueil/panier.html.twig', [
-           
-
-        ]);
-    }
 
     #[Route('/connexion', name: 'app_connexion')]
     public function connexion(): Response

@@ -12,10 +12,11 @@
         {% for prod in soucat.produits %}
             <div class="col-5">  
                 <a href="/detailProduit/{{prod.id}}">{{ prod.Nom}}
-                    <img src="/images/{{prod.Photo}}" alt="Produit" height="150px" width="150px">
+                    <img src="/images/{{ prod.Photo }}" alt="Produit" height="150px" width="150px">
                 </a>
             <div class="col-3">
                 <h1>{{prod.prix}}</h1>
+            </div>
             </div>
         {% endfor %}
     </div>

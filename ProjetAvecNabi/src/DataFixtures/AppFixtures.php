@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Entity\Categorie;
 use App\Entity\Produit;
 use App\Entity\SousCategorie;
+use App\Entity\User;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -13,7 +14,7 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager): void
     {
         $cat1 = new Categorie();
-        $cat1->setTypeSupport("PlayStation");
+        $cat1->setTypeSupport("PlayStation®5");
         $cat1->setImgSource("consolePs5.png");
         $manager->persist($cat1);
         
@@ -29,9 +30,14 @@ class AppFixtures extends Fixture
         $scat2->setCategorie($cat1);
         $manager->persist($scat2);
 
+        $scat5 = new SousCategorie();
+        $scat5->setTypeJeux("Sport");
+        $scat5->setImgSource("sports.png");
+        $scat5->setCategorie($cat1);
+        $manager->persist($scat5);
 
         $cat2 = new Categorie();
-        $cat2->setTypeSupport("XBox");
+        $cat2->setTypeSupport("XBox®X");
         $cat2->setImgSource("consoleXbox.png");
         $manager->persist($cat2);
 
@@ -48,19 +54,28 @@ class AppFixtures extends Fixture
         $scat4->setCategorie($cat2);
         $manager->persist($scat4);
 
+        $scat6=new SousCategorie();
+        $scat6->setTypeJeux("Sport");
+        $scat6->setImgSource("sports.png");
+        $scat6->setCategorie($cat2);
+        $manager->persist($scat6);
+
+
+
+
         $prod1 = new Produit();
         $prod1 ->setNom("Gta aventure ");
         $prod1 ->setPrix("69.99");
-        $prod1 ->setPhoto("Gta.png");
+        $prod1 ->setPhoto("gtaPs5.png");
         $prod1 ->setLibelleCourt("Produit super description courte(...)");
         $prod1 ->setLibelleLong("Description en detail du produit couleur forme de ou ca viens etc etc etc descriptif long");
         $manager->persist($prod1);
         $prod1->setSouscategorie($scat1);
 
         $prod2 = new Produit();
-        $prod2 ->setNom("Fifa");
+        $prod2 ->setNom("FifaPs5");
         $prod2 ->setPrix("79.99");
-        $prod2 ->setPhoto("Fifa2023.png");
+        $prod2 ->setPhoto("fifaPs5.png");
         $prod2 ->setLibelleCourt("Produit super description courte(...)");
         $prod2 ->setLibelleLong("Description en detail du produit couleur forme de ou ca viens etc etc etc descriptif long");
         $manager->persist($prod2);
@@ -68,13 +83,21 @@ class AppFixtures extends Fixture
 
 
         $prod3 = new Produit();
-        $prod3 ->setNom("Fifa");
+        $prod3 ->setNom("FifaXbox");
         $prod3 ->setPrix("99.99");     
-        $prod3 ->setPhoto("Fifa2023.png");
+        $prod3 ->setPhoto("fifaXbox.png");
         $prod3 ->setLibelleCourt("Produit super description courte (PlayStation/Guerre");
         $prod3 ->setLibelleLong("Description en detail du produit couleur forme de ou ca viens etc etc etc descriptif long");
         $manager->persist($prod3);
         $prod3->setSouscategorie($scat2);
+        
+        $user1 =new User();
+        $user1 ->setemail("nabi@gmail.com");
+        $user1 ->setmdp("nabi");
+        $user1 ->setrole("admin");
+        $manager->persist($user1);
+
+
 
 
         $manager->flush();

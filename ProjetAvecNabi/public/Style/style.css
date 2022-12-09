@@ -1,7 +1,7 @@
 
 .navbarsite {
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    linear-gradient(90.01deg, rgba(36, 0, 255, 0.46) -9.49%, #0009E0 146.9%) !important;
+    background: linear-gradient(0deg, rgba(25, 79, 129, 0.187), rgba(76, 60, 129, 0.311)),
+    linear-gradient(90.01deg, rgba(6, 54, 81, 0.176) -9.49%, #453b9d40 146.9%) !important;
 }
 
 .perso{
@@ -30,19 +30,29 @@
     color: white;
 }
 .disponible {
-    color: green;
+    color: hwb(128 18% 0%);
+
 }
 
 
 .disponible span{
-    color: rgb(128, 0, 0);
+    color: rgb(255, 93, 19);
 }
 
 .card-titre {
     text-align: center;
 }
-.img-card{
-    margin-top: 25%;
+.milieu{
+    align-items: center;
+    display: block;
+    align-items: flex-start;
+    margin-bottom: 5%;
+}
+
+
+.verticalcentre{
+
+    vertical-align: middle;
 }
 
 .card{
@@ -65,22 +75,27 @@
 .blanc{
     color: white;
 }
-
 .noir{
-    background-color: gray;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.gris{
+    color: rgb(35, 31, 31) !important;
 }
 
 .top{
-    margin-top: 6%;
+    margin-top: 2%;
 }
 .left{
     margin-left: 5%;
 }
 
 .centre{
-    text-align: center;
+    text-align: center !important;
 }
-
+.item{
+	align-items: center;
+}
 .demi{
     height:fit-content;
 }
@@ -97,4 +112,76 @@
 
 .foot{
     background-color: #0009E0;
+}
+
+.taille{
+    font-size: small;
+}
+
+.borderbot{
+    border: solid 2.5px rgb(0, 0, 0);
+    
+}
+
+.bordertop{
+    border-top: solid 2px black;
+    border-bottom: solid 2px black;
+}
+.eti{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.172), rgba(0, 0, 0, 0.304)),
+    linear-gradient(90.01deg, rgba(0, 0, 0, 0.344) -9.49%, #00000068 146.9%lien-console);
+}
+.etq{
+    background: linear-gradient(0deg, rgba(139, 75, 75, 0.172), rgba(174, 116, 1, 0.115)),
+    linear-gradient(90.01deg, rgba(24, 159, 121, 0.13) -9.49%, #3eb36f10 146.9%);
+}
+
+
+.right{margin-right: 17%;}
+
+
+
+.icon{
+    height: 80px;
+    width: 80px;
+}
+
+.marque{
+    display: block;
+    text-align: center;
+    margin-right: 17% !important;
+}
+/*==================================================*/
+/*==================================================*/
+/*==================================================*/
+
+
+
+
+@font-face {
+    font-family: "Quicksand";
+    src: url(https://fonts.google.com/specimen/Quicksand?utm_source=bdmtools&utm_medium=siteweb&utm_campaign=google-fonts&preview.text=Accueil&preview.text_type=custom);
+}
+
+.police{
+    font-family:"Quickstand";
+}
+
+.maxleft{
+    margin-left: 10%;
+}
+
+.btnsupp{
+	width: 20% !important;
+}
+
+
+/*=================== CSS ==================*/ 
+.bgconsole{
+
+	
+	background-image: url(/images/fondconsole.jpg);
+	width: 100%;
+	object-fit: scale-down;
+	
 }

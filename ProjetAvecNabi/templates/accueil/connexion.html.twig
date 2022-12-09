@@ -5,16 +5,22 @@
 
 {% block body %}
 
-<div class="container">
+<div class="container centre">
     <div class="card top" style="width: 18rem;">
+        {# <div class="top blanc "><h5>Connexion</h5></div> #}
+        <div class="card-text navbarsite blanc centre borderbot "><h5>Connexion</h5></div>
         <div class="card-body">
-            <h5 class="card-title">Connexion</h5><hr>
-            <p class="card-text">Identifiant<input type="text"></p>
-            <p class="card-text">Mot de passe<input type="text"><a href="">S'inscrire</a></p>
-            <a href="#" class="btn btn-primary">Submit</a>
+            <div class="row ">
+            <p class="card-text ">Identifiant<input type="text"></p>
+            <p class="card-text ">Mot de passe<input type="text"></p>
+            <a href="#" class="gris centre">Submit</a>
+            <a href="/" class="centre taille top">Inscription</a>
+            </div>
         </div>
     </div>
 </div>
-
 <br><br>
+
+
+
 {% endblock %}
