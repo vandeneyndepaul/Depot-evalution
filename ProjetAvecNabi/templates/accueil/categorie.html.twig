@@ -10,10 +10,10 @@
             <h1>Catégorie de jeux : {{ categorie.typeSupport }}</h1>
             <hr>
         </div>
-        <div class="row top">
+        <div class="row top bg-dark">
             {% for scat1 in categorie.sousCategories %}
-            <div class="col-3 left">
-                <div class="card left centre" style="width: 18rem;">
+            <div class="col-3 left top bot">
+                <div class="card left centre navbarsite" style="width: 18rem;">
                     <a href="/produits/{{scat1.id}}"><img src="/images/{{ scat1.imgSource }}" alt="categorie" class="icon"></a>
                     <div class="card-body ">
                         <h5 class="card-title"><a href="/produits/{{scat1.id}}">{{ scat1.typeJeux}}</a></h5>

@@ -1,7 +1,9 @@
 
 .navbarsite {
-    background: linear-gradient(0deg, rgba(25, 79, 129, 0.187), rgba(76, 60, 129, 0.311)),
-    linear-gradient(90.01deg, rgba(6, 54, 81, 0.176) -9.49%, #453b9d40 146.9%) !important;
+    /* background: linear-gradient(0deg, rgba(25, 79, 129, 0.187), rgba(76, 60, 129, 0.311)),
+    linear-gradient(90.01deg, rgba(6, 54, 81, 0.176) -9.49%, #453b9d40 146.9%) !important; */
+    background: linear-gradient(0deg, rgba(178, 178, 178, 0.616), rgb(255, 255, 255)),
+    linear-gradient(90.01deg, rgba(66, 63, 63, 0.763) -9.49%, #ffffff7b 146.9%) !important;
 }
 
 .perso{
@@ -69,7 +71,7 @@
 }
 
 .border{
-    border: solid 1px black;
+    border: solid 2px black;
 }
 
 .blanc{
@@ -124,8 +126,8 @@
 }
 
 .bordertop{
-    border-top: solid 2px black;
-    border-bottom: solid 2px black;
+    /* border-top: solid 2px black; */
+    border: solid 2px black;
 }
 .eti{
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.172), rgba(0, 0, 0, 0.304)),
@@ -149,12 +151,11 @@
 .marque{
     display: block;
     text-align: center;
-    margin-right: 17% !important;
+    margin-right: 69% !important;
 }
 /*==================================================*/
 /*==================================================*/
 /*==================================================*/
-
 
 
 
@@ -177,11 +178,20 @@
 
 
 /*=================== CSS ==================*/ 
-.bgconsole{
-
-	
-	background-image: url(/images/fondconsole.jpg);
+.bgconsole{	
+	background-image: url(/images/fond.jpg);
 	width: 100%;
-	object-fit: scale-down;
+	display: block;
 	
+}
+
+.bot{
+    margin-bottom: 2.5%;
+}
+
+.bgpanier{
+    background-image: url(/images/fond2.jpg);
+}
+.borderpanier{
+    border: solid 3px black;
 }

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Produit;
 use App\Repository\ProduitRepository;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -47,7 +48,7 @@ class PanierController extends AbstractController
     
     
     #[Route('/panier', name: 'app_panier')]
-    public function index(SessionInterface $session ): Response
+    public function index(SessionInterface $session,ProduitRepository $pro ): Response
     {
 
 
@@ -55,7 +56,9 @@ class PanierController extends AbstractController
 
         $nb = 0;
         foreach ($panier as $v) {
-            $nb += $v->getPrix();
+            $prixproduitpanier = $v->getPrix();
+            $nb += $prixproduitpanier*$v->quantite;
+        
         }
 
 
@@ -116,4 +119,7 @@ class PanierController extends AbstractController
 
         return $this->redirect("/panier");
     }
+
+
+    
 }

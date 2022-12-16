@@ -4,24 +4,25 @@
 {% block title %}Page Accueil{% endblock %}
 
 {% block body %}
-
-<div class="container top">
+<br>
+<div class="border align bgpanier borderbox">
+<div class="container top bot">
     <div class="row">
-        <div class="col-7 border">
+        <div class="col-7 borderpanier bg-light">
             <div class="row eti">
                 <div class="col-10 "><h2 class="gris">Votre panier</h2></div>
-                <div class="col-2"><a href="/clear"><button class="btn btn-sm eti top border btn-warning " type="button">Clear </button></a></div>
+                <div class="col-2"><a href="/clear"><button class="btn btn-sm eti top borderpanier btn-warning " type="button">Clear </button></a></div>
             </div>
 
         {% for pro in panier %}
             <div class="row top">
                 <div class="col-2 "><img src="/images/{{ pro.Photo }}" alt="prod" style="heigh : 100%; width : 100%;"></div>
                 <div class="col-7 "><h4>{{ pro.Nom }}</h4>{{ pro.LibelleLong }} <br>{{ pro.Nom }} <br><h6>en Stock</h6><h6>Couleur : "(...)"</h6></div>
-                <div class="col-3 centre "><div class="row"><h3>{{ pro.Prix }}</h3></div><div class="row "> <a href="/sub/{{pro.id}}" class="btn btn-primary btnsupp"> - </a><a href="/add/{{pro.id}}" class="btn btn-primary btnsupp "> + </a><p class="centre ">Quantité{{ pro.quantite }}</p></div></div><hr>
+                <div class="col-3 centre "><div class="row"><h3>{{ pro.Prix }}</h3></div> <p class="centre ">Quantité<h5 class="border">{{ pro.quantite }}</h5><a href="/sub/{{pro.id}}" class="btn  btnsupp"><i class="fa-solid fa-minus"></i> </a><a href="/add/{{pro.id}}" class="btn btnsupp "> <i class="fa-solid fa-plus"></i></a></p></div><hr class="gris">
             </div> 
         {% endfor %}      
             
-            <div class="row">
+            {# <div class="row">
                 <div class="col-5 border">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Quantité</a>
@@ -35,30 +36,31 @@
                 </div>
                 <div class="col-3 border">Supprimer</div>
                 <div class="col-4 border">Mettre de coté</div>
-            </div>
+            </div> #}
         
         
         <div class="row">
             <div class="col-12 centre"><hr><a href="/" class="gris"><button class="btn bg-warning border" type="button">Ajouter des produits</button></a><br><br></div>
         </div>
         </div>
-        <div class="col-4 left border demi">
+        <div class="col-4 left borderpanier demi bg-light">
             <div class="container2">
-                <div class="row "><h3 class="blanc eti">Cumul Panier</h3>{% for pro in panier %}
-                    <div class="col-8">{{pro.Nom}} x {{pro.quantite}}</div>
-                    <div class="col-4 "><p class="">{{pro.Prix}}  </p>  </div> <hr> 
+                <div class="row "><h3 class="griseti">Cumul Panier</h3>{% for pro in panier %}
+                    <div class="col-8">{{pro.Nom}} </div>
+                    <div class="col-4 "><p class="">{{pro.Prix}}  x {{pro.quantite}}  </p>  </div>{% endfor %} <hr> 
                     <div class="col-8 top"><h4>Total   :</h4></div>
-                    <div class="col-4 top"><h4>{{ calcul * pro.quantite }} € </h4></div>{% endfor %}
+                    <div class="col-4 top"><h4>{{ calcul }} € </h4></div>
                 </div>
                 <hr>
                 <div class="row">
                     <div class="col-12 centre">
-                     <a href="/"><button class="btn btn-warning gris" type="button" >Règler mon panier</button></a><br><br>
+                     <a href="/valid"><button class="btn btn-warning gris" type="button" >Règler mon panier</button></a><br><br>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}

@@ -1,59 +1,76 @@
-<nav class="navbar navbar-expand-lg ">
-  <div class="container-fluid">
-    
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        
-        <li class="nav-item">  
-          <a class="nav-link active " aria-current="page" href="/"><h4 class="police">Accueil</h4></a>
-        </li>
-        {% for cat in categories %}
-        <li class="nav-item left">
-            <a class="nav-link active lien-console" aria-current="page" href="/categorie/{{cat.id}}"><h4 class="police">{{cat.TypeSupport}}</h4></a>
-        </li>
-        {% endfor %}
-     
+<div class="row ">
+	<div class="col-12 left">
+		<a class="gris" href="/">
+			<h3 class="marque ">\Web/®\Games/</h3>
+		</a>
+	</div>
+</div>
 
-         {# <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/Produit">Pc</a>
-        </li> #}
+<nav class="navbar navbar-expand-lg left">
+	<div class="container-fluid ms-5">
 
-      
-    
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 
-      
-     
-      
-        <li class="nav-item dropdown maxleft">
-          <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <h4 class="police"> Menu</h4>
-          </a>
-          <ul class="dropdown-menu police">        
-            <li><a class="dropdown-item " aria-current="page" href="/connexion"><h6 class="police">Connexion/Deconnexion</h6></a></li>
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-         </li> <a class="navbar-brand  bordertop maxleft" href="/"><h3 class="marque">\Web/®\Games/</h3></a>
+				<li class="nav-item ms-5">
+					<a class="nav-link active " aria-current="page" href="/">
+						<h4 class="police">Accueil</h4>
+					</a>
+				</li>
+				{% for cat in categories %}
+					<li class="nav-item left">
+						<a class="nav-link active lien-console" aria-current="page" href="/categorie/{{cat.id}}">
+							<h4 class="police">{{cat.TypeSupport}}</h4>
+						</a>
+					</li>
+				{% endfor %}
+  {% if app.user %}
+				<li class="nav-item dropdown maxleft">
+					<a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+						<h4 class="police">
+							Menu</h4>
+					</a>
+					<ul class="dropdown-menu police">
+						<li>
+						{% if is_granted("ROLE_USER") %}
+              <a class="dropdown-item " aria-current="page" href="/userHome">
+								<h6 class="police">Home</h6>
+							</a> 
+            {% endif %}
 
-      </ul>
+						{% if is_granted("ROLE_ADMIN") %}
+              <a class="dropdown-item " aria-current="page" href="/AdminHome">
+								<h6 class="police">Admin</h6>
+							</a> 
+            {% endif %}
+           
+            </li>
+					</ul>
+				</li>
+			{% endif %}</ul>
 
-  
-     <div>
-     <a href="/panier" class="gris">Panier (  {{ panier | length}}  )</a>
-     </div>
+			<div>
+				<a href="/panier" class="gris">Panier (
+					{{ panier | length}}
+					)</a>
+			</div>
 
+			<form class="d-flex" role="search">
+				<input class="form-control-sm me-2" type="search" placeholder="Search" aria-label="Search">
+			  <i class="fa-solid fa-magnifying-glass btn btn-outline-dark border"></i>
+			</form>
 
-      <form class="d-flex" role="search">
-        <input class="form-control-sm me-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
-              <i class="fa-solid fa-magnifying-glass btn btn-outline-dark border"></i>
-    </div>
-  </div>
+      <div class="ms-5">
+          {% if app.user %}
+				      <a href="/logout" class="gris">Deconnexion</a>
+          {% else %}
+				      <a href="/login" class="gris">Connexion</a>
+          {% endif %}
+
+			</div>
+		</div>
+	</div>
 </nav>
-
-

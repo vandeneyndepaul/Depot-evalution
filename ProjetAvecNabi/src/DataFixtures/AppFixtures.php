@@ -91,14 +91,18 @@ class AppFixtures extends Fixture
         $manager->persist($prod3);
         $prod3->setSouscategorie($scat2);
         
-        $user1 =new User();
-        $user1 ->setemail("nabi@gmail.com");
-        $user1 ->setmdp("nabi");
-        $user1 ->setrole("admin");
-        $manager->persist($user1);
 
+        $u1 = new User();
+        $u1->setEmail("user@gmail.com");
+        $u1->setRoles(["ROLE_USER"]);
+        $u1->setPassword('$2y$13$W7CJMas5HtRbCoJnz7Kss.LIqnqkOgmqfeWJXlFXclXBg1eLRF3xu');
+        $manager->persist($u1);
 
-
+        $u2 = new User();
+        $u2->setEmail("admin@gmail.com");
+        $u2->setRoles(["ROLE_ADMIN"]);
+        $u2->setPassword('$2y$13$W7CJMas5HtRbCoJnz7Kss.LIqnqkOgmqfeWJXlFXclXBg1eLRF3xu');
+        $manager->persist($u2);
 
         $manager->flush();
     }
