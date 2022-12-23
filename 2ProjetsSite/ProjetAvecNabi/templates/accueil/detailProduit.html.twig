@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Page Accueil{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <h1>Détail du produit >> {{ detail.Nom}}</h1>
+        <hr>
+        <div class="col-4">
+            <img src="/images/{{detail.Photo}}" alt="Prod" class="perso">
+        </div>
+        
+        <div class="col-8">
+            <div class="row">
+                <div class="col-12">
+                    <p>{{detail.LibelleLong}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <a href="/add/{{ detail.id }}" class="btn btn-dark">Ajouter au panier</a>
+                </div>
+            </div>
+        </div>    
+    </div>
+    
+    
+
+
+</div>
+
+
+{% endblock %}

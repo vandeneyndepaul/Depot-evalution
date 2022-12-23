@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Page Categorie{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="centre mb-5">
+        <h1> {{ categories.TypeMontre }}</h1><hr>
+    </div>
+        
+    <div class="centre mb-5">
+        <h5>Selectionner votre taille : </h5><hr>
+    </div>
+
+
+
+    <div class="row">
+        {% for scat1 in categories.souscategories %}
+            <div class="col-4 ">
+                <div class="card centre">
+                    <a href="/produits/{{scat1.id}}"><img src="/images/{{ scat1.imgSource }}" alt="categorie" class="iconCategorie">
+                        <div class="card-body ">
+                            <h5 class="card-title">{{ scat1.taille}}</h5>
+                            <p class="card-text "><p></p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ducimusue, adipisci eum corporis cumque nobis dicta!</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}

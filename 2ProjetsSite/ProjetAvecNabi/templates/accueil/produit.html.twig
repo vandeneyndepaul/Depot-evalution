@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Page Accueil{% endblock %}
+
+{% block body %}
+
+
+
+<div class="border align bgconsole borderbox ">
+<h1 class="centre blanc police">Type de jeux : {{soucat.typeJeux}}</h1><hr class="blanc"><br>
+<div class="row ">
+{% for prod in soucat.produits %}
+<div class="col-5 milieu">
+
+  <div class="card navbarsite gris" style="max-width: 540px;">
+    <div class="row g-0">
+    <a class="gris centre"href="/detailProduit/{{prod.id}}"><h4>{{ prod.Nom}}</h4>
+      <div class="col-md-4">
+       <img src="/images/{{prod.Photo}}" class="img-fluid img-card verticalcentre left" alt="Ps5"></a>
+      </div>
+      <div class="col-md-8">
+        <div class="card-body card-titre">
+          <h5 class="card-title "><a href="/" class="gris"></h5></a>
+          <p class="card-text">À partir de <h5>{{prod.prix}}</h5> <br>Prix régulier €749,00</p>
+          <p class="card-text"><h6></h6>STOCK LIMITÉ <br>Découvrez en exclusivité la  </p>
+          <p class="card-text "><small class="disponible border">Disponible <br><span>Ruprutre de stocks</span></small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div>
+
+{% endblock %}

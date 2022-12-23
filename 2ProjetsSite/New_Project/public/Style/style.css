@@ -1,0 +1,93 @@
+
+
+/*===================================*/
+/*              UTILE                */
+/*===================================*/
+
+.centre{
+    text-align: center;
+}
+.blanc{
+    color: aliceblue;
+}
+.align{
+    align-items: center;
+}
+
+/*===================================*/
+/*              LOGO                 */
+/*===================================*/
+
+.logo{
+    
+    width: 10%;
+    height: 10%;
+
+}
+
+.iconCategorie{
+    height: 50%;
+    width: 50%;
+}
+
+/*===================================*/
+/*             PUB            */
+/*===================================*/
+
+.bg{
+    background-color: black;
+}
+
+.imgBloc2Principale{
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+
+/*===================================*/
+/*             Section               */
+/*===================================*/
+
+
+.premier{
+    margin-bottom: 3%;
+    margin-top: 3%;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+}
+
+.premier p{
+    text-align: center;
+}
+
+.second{
+    text-align: center;
+    margin-top: 5%;
+    
+}
+.second h1{
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+.second p{
+    color: black;
+    font-size: 2em;
+}
+
+.troisieme{
+    margin-bottom: 5%;
+    margin-top: 6%;
+    font-size: 2em;
+    color: rgb(0, 0, 0);
+}
+.troisieme p{
+    text-align: center;
+}
+
+
+.quatrieme{
+    background-color: black;
+}
