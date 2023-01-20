@@ -2,8 +2,13 @@
 
 namespace App\DataFixtures;
 
+use DateTime;
+use App\Entity\User;
+
 use App\Entity\Categories;
+use App\Entity\Commandes;
 use App\Entity\Produits;
+use App\Entity\SeCompose;
 use App\Entity\Souscategories;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -62,7 +67,7 @@ class DataFixture extends Fixture
         
 
         $prod1 = new Produits();
-        $prod1 ->setName("Montre 1");
+        $prod1 ->setName("Montre bleu");
         $prod1 ->setPrice("69.99");
         $prod1 ->setPhoto("produit1.png");
         $prod1 ->setLibelleCourt("Produit super description courte(...)");
@@ -84,16 +89,67 @@ class DataFixture extends Fixture
         $prod3 ->setName("Montre 3");
         $prod3 ->setPrice("99.99");     
         $prod3 ->setPhoto("produit3.png");
-        $prod3 ->setLibelleCourt("Produit super description courte (PlayStation/Guerre");
+        $prod3 ->setLibelleCourt("Produit super description courteUser (PlayStation/Guerre");
         $prod3 ->setLibelleLong("Description en detail du produit couleur forme de ou ca viens etc etc etc descriptif long");
         $manager->persist($prod3);
         $prod3->setSouscategorie($scat1);
 
 
+        $u1 = new User();
+        $u1->setEmail("user@gmail.com");
+        $u1->setRoles(["ROLE_USER"]);
+        $u1->setPassword('$2y$13$W7CJMas5HtRbCoJnz7Kss.LIqnqkOgmqfeWJXlFXclXBg1eLRF3xu');
+        $u1->setLastname('vde');
+        $u1->setFirstname('paul');
+        $u1->setAdress('21 rue bertreux');
+        $u1->setZipcode('80000');
+        $u1->setCity('Amiens');
+        $manager->persist($u1);
+
+        $u2 = new User();
+        $u2->setEmail("admin@gmail.com");
+        $u2->setRoles(["ROLE_ADMIN"]);
+        $u2->setPassword('$2y$13$W7CJMas5HtRbCoJnz7Kss.LIqnqkOgmqfeWJXlFXclXBg1eLRF3xu');
+        $u2->setLastname('harlif');
+        $u2->setFirstname('moh');
+        $u2->setAdress('18 rue btx');
+        $u2->setZipcode('80000');
+        $u2->setCity('Amiens');
+        $manager->persist($u2);
 
 
-        // $product = new Product();
-        // $manager->persist($product);
+        $u3 = new User();
+        $u3->setEmail("user2@gmail.com");
+        $u3->setRoles(["ROLE_USER"]);
+        $u3->setPassword('$2y$13$W7CJMas5HtRbCoJnz7Kss.LIqnqkOgmqfeWJXlFXclXBg1eLRF3xu');
+        $u3->setLastname('bit');
+        $u3->setFirstname('toto');
+        $u3->setAdress('21 rue beige');
+        $u3->setZipcode('80000');
+        $u3->setCity('Amiens');
+        $manager->persist($u3);
+
+    
+
+        $com1 = new Commandes();
+        $com1->setUser($u1);
+        $com1->setDate(new DateTime());
+        $manager->persist($com1);
+
+        $sc1 = new SeCompose();
+        $sc1->setProduit($prod1);
+        $sc1->setCommande($com1);
+        $sc1->setQuantite(5);
+        $manager->persist($sc1);
+
+        // $sc2 = new SeCompose();
+        // $sc2->setProduit($prod2);
+        // $sc2->setCommande($com1);
+        // // $sc2->setQuantite(2);
+        // $manager->persist($sc2);
+        // $manager->flush();
+        // // $product = new Product();
+        // // $manager->persist($product);
 
         $manager->flush();
     }

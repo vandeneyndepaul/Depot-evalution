@@ -10,6 +10,17 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PagePrincipaleController extends AbstractController
 {
+
+    #[Route('/accueil', name: 'app_page_accueil')]
+    public function accueil(CategoriesRepository $repo): Response
+    {
+        $categories = $repo->findAll();
+
+        return $this->render('page_principale/index.html.twig', [
+            'categories' => $categories
+        ]);
+    }
+    
     #[Route('/', name: 'app_page_principale')]
     public function index(CategoriesRepository $repo): Response
     {
@@ -46,6 +57,28 @@ class PagePrincipaleController extends AbstractController
             'produits' => $produits,
             'souscat' => $souscat,
      
+
+        ]);
+    }
+
+    #[Route('/detail/{id}', name: 'app_detail')]
+    public function detailProduit($id, ProduitsRepository $repo): Response
+    {
+        $detail = $repo->find($id);
+
+        return $this->render('page_principale/detail.html.twig', [
+            'detail' => $detail
+
+        ]);
+    }
+    
+
+    #[Route('/connexion', name: 'app_connexion')]
+    public function connexion(): Response
+    {
+
+
+        return $this->render('accueil/connexion.html.twig', [           
 
         ]);
     }

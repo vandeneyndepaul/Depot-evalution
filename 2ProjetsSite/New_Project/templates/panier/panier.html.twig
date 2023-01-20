@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Accueil{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-7 border">
+            <div class="row">
+                <div class="col-12 "><h2 class="mb-5">Votre panier</h2><hr></div>
+            </div>
+
+        {% for pro in panier %}
+            <div class="row mt-3">
+                <div class="col-2 "><img src="/images/{{ pro.Photo }}" alt="prod" style="heigh : 100%; width : 100%;"></div>
+                <div class="col-7 "><h4>{{ pro.Name }}</h4>{{ pro.LibelleLong }} <br>{{ pro.Name }} <br><p>en Stock</p><p>Couleur : "(...)"</p></div>
+                <div class="col-3 centre "><div class="row"><h3>{{ pro.Price }}€</h3></div> <p class="centre ">Quantité<h5 class="border">{{ pro.quantite }}</h5><a href="/sub/{{pro.id}}" class="btn  btnsupp"><i class="fa-solid fa-minus"></i> </a><a href="/add/{{pro.id}}" class="btn btnsupp "> <i class="fa-solid fa-plus"></i></a></p></div><hr class="gris">
+            </div> <hr>
+        {% endfor %}      
+
+        <div class="row">
+            <div class="col-6"><hr><a href="/" class=""><button class="btn btn-dark" type="button">Ajouter des produits</button></a></div>
+        </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-4">
+            <div class="container2">
+                <div class="row "><h3 class="mb-3">Cumul Panier</h3>{% for pro in panier %}
+                    <div class="col-8">{{pro.Name}} </div>
+                    <div class="col-4 "><p class="">{{pro.Price}}  x {{pro.quantite}}  </p>  </div>{% endfor %} <hr> 
+                    <div class="col-8 top"><h4>Total   :</h4></div>
+                    <div class="col-4 top"><h4>{{ calcul }} € </h4></div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-12 centre">
+                        <a href="/valid"><button class="btn btn-warning" type="button" >Règler mon panier</button></a><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommandeController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+
+<h3 class="centre">Commande :</h3> 
+
+
+
+
+<table>
+    <tr>
+        <th>Produit</th>
+        <th>Prix</th>
+        <th>Photo</th>
+        <th>Quantite</th>
+        <th>Total</th>
+    </tr>
+            {% for com in commande %}
+    <tr> 
+    <td>{{com.Produit.id}}</td>
+    <td>{{com.Produit.Name}}</td>
+    <td><img src="/images/{{com.Produit.photo}}" alt="mtr" class="imgcommande"></td>
+        <td>{{ com.quantite }}</td>
+    </tr>
+            {% endfor %}
+</table>
+</div>
+
+
+        
+
+{% endblock %}

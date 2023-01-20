@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\ProduitsRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ProduitsRepository::class)]
@@ -30,6 +32,14 @@ class Produits
 
     #[ORM\ManyToOne(inversedBy: 'produits')]
     private ?Souscategories $souscategorie = null;
+
+    #[ORM\OneToMany(mappedBy: 'produit', targetEntity: SeCompose::class)]
+    private Collection $seComposes;
+
+    public function __construct()
+    {
+        $this->seComposes = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -104,6 +114,36 @@ class Produits
     public function setSouscategorie(?Souscategories $souscategorie): self
     {
         $this->souscategorie = $souscategorie;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, SeCompose>
+     */
+    public function getSeComposes(): Collection
+    {
+        return $this->seComposes;
+    }
+
+    public function addSeCompose(SeCompose $seCompose): self
+    {
+        if (!$this->seComposes->contains($seCompose)) {
+            $this->seComposes->add($seCompose);
+            $seCompose->setProduit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeSeCompose(SeCompose $seCompose): self
+    {
+        if ($this->seComposes->removeElement($seCompose)) {
+            // set the owning side to null (unless already changed)
+            if ($seCompose->getProduit() === $this) {
+                $seCompose->setProduit(null);
+            }
+        }
 
         return $this;
     }
