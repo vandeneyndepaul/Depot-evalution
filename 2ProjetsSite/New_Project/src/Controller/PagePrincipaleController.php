@@ -11,15 +11,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class PagePrincipaleController extends AbstractController
 {
 
-    #[Route('/accueil', name: 'app_page_accueil')]
-    public function accueil(CategoriesRepository $repo): Response
-    {
-        $categories = $repo->findAll();
-
-        return $this->render('page_principale/index.html.twig', [
-            'categories' => $categories
-        ]);
-    }
+    
     
     #[Route('/', name: 'app_page_principale')]
     public function index(CategoriesRepository $repo): Response
@@ -50,13 +42,13 @@ class PagePrincipaleController extends AbstractController
     {
         $produits = $pro->findAll();
         $souscat = $sou->find($id);
-      
+
 
 
         return $this->render('page_principale/produits.html.twig', [
             'produits' => $produits,
             'souscat' => $souscat,
-     
+
 
         ]);
     }
@@ -73,12 +65,12 @@ class PagePrincipaleController extends AbstractController
     }
     
 
-    #[Route('/connexion', name: 'app_connexion')]
+    #[Route('/test', name: 'app_test')]
     public function connexion(): Response
     {
 
 
-        return $this->render('accueil/connexion.html.twig', [           
+        return $this->render('page_principale/test.html.twig', [           
 
         ]);
     }

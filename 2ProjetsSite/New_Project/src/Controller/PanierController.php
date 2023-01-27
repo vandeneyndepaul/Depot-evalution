@@ -48,7 +48,7 @@ class PanierController extends AbstractController
     
     
     #[Route('/panier', name: 'app_panier')]
-    public function index(SessionInterface $session,ProduitsRepository $pro ): Response
+    public function index(SessionInterface $session): Response
     {
 
 

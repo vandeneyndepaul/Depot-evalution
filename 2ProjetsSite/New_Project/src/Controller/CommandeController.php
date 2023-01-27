@@ -38,7 +38,7 @@ class CommandeController extends AbstractController
             $sc = new SeCompose();
             $sc->setCommande($com);
             $sc->setProduit($p);
-            $sc->setQuantite(3);
+            $sc->setQuantite($produit->quantite);
             $manager->persist($sc);
             $manager->flush();
         }
@@ -62,11 +62,36 @@ class CommandeController extends AbstractController
     #[Route('/commandes', name: 'app_commandes')]
     public function commandes(CommandesRepository $c): Response
     {
-
         $liste = $c->findBy(["user" => $this->getUser()]);
         
         return $this->render('valid/commandes.html.twig', [
-            'commande' => $liste
+            'commande' => $liste,
+
+        ]);
+    }
+
+    #[IsGranted("ROLE_USER")]
+    #[Route('/sendcommandes', name: 'app_sendcommandes')]
+    public function sendcommandes(CommandesRepository $c): Response
+    {
+        $liste = $c->findBy(["user" => $this->getUser()]);
+        
+        return $this->render('valid/sendcommandes.html.twig', [
+            'commande' => $liste,
+
+        ]);
+    }
+
+    #[IsGranted("ROLE_USER")]
+    #[Route('/commandes_detail/{id}', name: 'app_details_commandes')]
+    public function commandes_detail(Commandes $id): Response
+    {
+        // $liste = $c->findBy(["user" => $this->getUser()]);
+        // $pc = $sc->findBy($id);
+        
+        return $this->render('valid/details_commande.html.twig', [
+            'com' => $id
+
         ]);
     }
 }

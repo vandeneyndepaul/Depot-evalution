@@ -95,3 +95,21 @@
 .imgcommande{
     width: 10%;
 }
+
+
+
+.part1 h1{
+text-align: center;
+background-color: aquamarine;
+}
+
+.vert{
+    text-align: center;
+    background-color: rgb(19, 217, 8);
+}
+
+.tb{
+    border: solid 2px;
+}
+
+
