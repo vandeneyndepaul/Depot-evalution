@@ -1,0 +1,5 @@
+SELECT sta_nom,(count(hot_nom)) AS NbHotel_ParStation from hotel
+join station on hotel.hot_sta_id=station.sta_id
+GROUP BY sta_nom;
+
+

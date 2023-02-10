@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PagePrincipaleController!{% endblock %}
+
+{% block body %}
+
+
+
+
+
+<section class="premier">
+<hr>
+<p>Découvrez nos produits </p>
+<hr>
+</section>
+
+<section class="second">
+    <div class="container">
+        <div> 
+        {% for cat in categories %}
+            <a href="/categories/{{cat.id}}">
+                <div class="row mb-5">
+                    <div class="col-6 ">
+                        <img src="/images/{{cat.ImgSource}}" alt="img_montre" class="img-fluid mb-5  imgBloc2Principale ">
+                    </div>
+                    <div class="col-6">
+                        <h1>{{cat.Typemontre}} </h1>
+                        <p>Découvrez nos Montres {{cat.Typemontre}} sur </p>
+                        <p> ✓Garantie 60 jours satisfaits ou remboursé </p> 
+                        <p> ✓Livraison et retour gratuits.</p> 
+                    </div>
+                </div>
+            </a>{% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+<section class="troisieme">
+<hr>
+<p> Selectionner des composants à changer </p>
+<hr>
+</section>
+
+
+<section class="quatrieme">
+    <div class="container-fluid">
+        <div class="row mb-5">
+            <div class="col-3 mt-5 mb-5"><img src="/images/montre1.jpg" alt="img_montre" class=" img-fluid"></div>
+            <div class="col-3 mt-5 mb-5"><img src="/images/montre2.jpg" alt="img_montre" class=" img-fluid"></div>
+            <div class="col-3 mt-5 mb-5"><img src="/images/montre3.jpg" alt="img_montre" class=" img-fluid"></div>
+            <div class="col-3 mt-5 mb-5"><img src="/images/montre4.jpg" alt="img_montre" class=" img-fluid"></div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

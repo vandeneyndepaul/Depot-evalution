@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommandeController!{% endblock %}
+
+{% block body %}
+
+{# <div class="container">
+<h3 class="centre">Commande :</h3> 
+<table>
+    <tr>
+        <th>Produit</th>
+        <th>Prix</th>
+        <th>Photo</th>
+        <th>Quantite</th>
+        <th>Total</th>
+    </tr>
+            {% for com in commande %}
+    <tr> 
+    <td>{{com.Produit.id}}</td>
+    <td>{{com.Produit.Name}}</td>
+    <td><img src="/images/{{com.Produit.photo}}" alt="mtr" class="imgcommande"></td>
+        <td>{{ com.quantite }}</td>
+    </tr>
+            {% endfor %}
+</table>
+</div> #}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12"><h3>informations de livraison</h3></div>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-6"><h6>Full name</h6></div>
+                <div class="col-6"><h6>{{app.user.firstname}} {{app.user.lastname}} </h6></div>
+            </div>
+            <div class="row">
+                <div class="col-6"><h6>Email adress</h6></div>
+                <div class="col-6"><h6>{{app.user.email}}</h6></div>
+            </div>
+            <div class="row">
+                <div class="col-6"><h6>User ID</h6></div>
+                <div class="col-6"><h6>{{app.user.id}}</h6></div>
+            </div>
+            <div class="row">
+                <div class="col-6"><h6>adress </h6></div>
+                <div class="col-6"><h6>{{app.user.adress}}</h6></div>
+            </div>
+            <div class="row">
+                <div class="col-6"><h6> Zip code</h6></div>
+                <div class="col-6"><h6>{{app.user.zipcode}}</h6></div>
+            </div>
+            <div class="row">
+                <div class="col-6"><h6>city</h6></div>
+                <div class="col-6"><h6>{{app.user.city}}</h6></div>
+            </div>
+            <div class="row">
+                <div class="col-6"><h6>commande id</h6></div>
+                <div class="col-6"><h6></h6></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3"><button type="button" class="btn btn-dark mt-5"><a href="/livraison">modifier livraison</a></button></div>
+        <div class="col-3"><button type="button" class="btn btn-dark mt-5"><a href="/sendcommandes">valider livraison</a></button></div>
+    </div>
+</div>
+
+{% endblock %}

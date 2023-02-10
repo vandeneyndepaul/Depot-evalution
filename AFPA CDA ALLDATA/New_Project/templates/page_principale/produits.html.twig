@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}Page Categorie{% endblock %}
+
+{% block body %}
+<div class="container">
+        <div class="centre mb-5">
+            <h5> Nos produits : {{ souscat.taille }} pouces</h5><hr>
+        </div>
+            
+
+    
+        <div class="row ">
+            {% for prod in souscat.produits %}
+            <div class="col-4 ">
+                <div class="card centre mt-5 dark" >
+                    <a href="/detail/{{prod.id}}"><img src="/images/{{ prod.Photo }}" alt="categorie" class="iconCategorie mt-3"></a>
+                    <div class="card-body ">
+                        <h5 class="card-title"><a href="/produits/{{prod.id}}">{{ prod.Name}}</a></h5>
+                        <p class="card-text "><p></p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab ducimusue, adipisci eum corporis cumque nobis dicta!</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+{% endblock %}

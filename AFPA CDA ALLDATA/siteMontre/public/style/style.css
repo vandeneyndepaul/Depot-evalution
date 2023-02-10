@@ -1,0 +1,33 @@
+
+.blanc{
+    color: beige;
+}
+
+.part2{
+    margin-left: 5%;
+    margin-top: 10%;
+    text-align: center;
+}
+
+
+
+.header{
+    background-color: black;
+    opacity: 98%;
+   
+}
+.produit-accueil{
+    margin-top: 0.5%;
+    height: 100%;
+    width: 100%;
+    border-bottom: solid 1px wheat;
+    background: linear-gradient(185deg, black 20%, rgb(158, 157, 157)) !important;
+    opacity: 98%;
+    z-index: 0;
+}
+
+.image-accueil{
+    margin-left: 10%;
+    height: 100%;
+    width: 100%;
+}

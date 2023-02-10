@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommandeController!{% endblock %}
+
+{% block body %}
+<p>Commande :</p> 
+            {% for com in commande %}
+            {{com.Produit.Nom }} <br>
+             id produit {{ com.Produit.id }}<br>
+             quantite :{{ com.Quantite }} <br> <br>
+            
+            
+            {% endfor %}
+         
+            {% endblock %}

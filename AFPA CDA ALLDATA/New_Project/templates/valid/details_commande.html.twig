@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommandeController!{% endblock %}
+
+{% block body %}
+
+<div class="container centre ">
+    <h3 class="centre mb-5 ">Détails de Commande </h3>
+    <div class="row">
+        <div class="col-12">
+            <tr>
+                <td><h6>Commande numero : {{com.id}}</h6>  </td>
+                <td><h6>{{com.date | date("d/m/Y") }}</h6></td>
+                <td><h6>{{app.user.adress}}</h6></td>
+            </tr>
+        </div>
+    </div>
+    
+    <div.row>
+        <div class="col-12 mt-5">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID produit</th>
+                        <th scope="col">référence</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Quantitée</th>
+                    </tr>
+                </thead>
+
+                <tbody>       
+                    {% for ligne in com.seComposes %}
+                        <tr>
+                            <td ><img src="/images/{{ligne.produit.Photo }}" alt="mtr" class="imgcommande"></td>
+                            <td>{{ ligne.produit.id }}</td>
+                            <td>{{ ligne.produit.name }}</td>
+                            <td>{{ ligne.quantite }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

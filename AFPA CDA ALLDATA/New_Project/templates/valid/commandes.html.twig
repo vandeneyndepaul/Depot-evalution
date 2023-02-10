@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CommandeController!{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12"><h3 class="centre mb-5 ">Historique de Commandes : </h3></div>   
+    </div>
+    
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID Commande</th>
+            <th scope="col">Date Commande</th>
+            <th scope="col">Etat</th>
+            <th scope="col">Adress</th>
+            <th scope="col">Consulter</th>
+        </tr>
+    </thead>
+    {% for com in commande %}
+    <tbody>
+        <tr>
+            <th scope="row">{{com.id}}</th>
+            <td>{{com.date | date("d/m/Y") }}</td>
+            <td>En cour</td>
+            <td>{{app.user.adress}}</td>
+            <td><a href="/commandes_detail/{{com.id}}">détail</a></td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,40 @@
+
+CREATE database Exercie1_eval_bdd;
+USE Exercie1_eval_bdd;
+
+CREATE TABLE Produit(
+   Pro_num INT,
+   Pro_libelle VARCHAR(50),
+   Pro_description VARCHAR(50),
+   PRIMARY KEY(Pro_num)
+);
+
+CREATE TABLE Client(
+   Cli_num INT,
+   Cli_nom VARCHAR(50),
+   Cli_adresse VARCHAR(50),
+   Cli_tel VARCHAR(30),
+   PRIMARY KEY(Cli_num)
+);
+
+CREATE INDEX idx1 ON Client(Cli_nom);
+
+CREATE TABLE Commande(
+   Com_num INT,
+   Cli_num INT,
+   Com_date DATETIME,
+   Com_obs VARCHAR(50),
+   Cli_num_1 INT NOT NULL,
+   PRIMARY KEY(Com_num),
+   FOREIGN KEY(Cli_num_1) REFERENCES Client(Cli_num)
+);
+
+CREATE TABLE Est_compose(
+   Pro_num INT,
+   Com_num INT,
+   est_qte INT,
+   PRIMARY KEY(Pro_num, Com_num),
+   FOREIGN KEY(Pro_num) REFERENCES Produit(Pro_num),
+   FOREIGN KEY(Com_num) REFERENCES Commande(Com_num)
+);
+

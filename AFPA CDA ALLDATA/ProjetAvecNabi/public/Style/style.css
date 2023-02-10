@@ -1,0 +1,197 @@
+
+.navbarsite {
+    /* background: linear-gradient(0deg, rgba(25, 79, 129, 0.187), rgba(76, 60, 129, 0.311)),
+    linear-gradient(90.01deg, rgba(6, 54, 81, 0.176) -9.49%, #453b9d40 146.9%) !important; */
+    background: linear-gradient(0deg, rgba(178, 178, 178, 0.616), rgb(255, 255, 255)),
+    linear-gradient(90.01deg, rgba(66, 63, 63, 0.763) -9.49%, #ffffff7b 146.9%) !important;
+}
+
+.perso{
+    height: auto;
+    width: 70%;
+}
+
+.item-accueil{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    linear-gradient(90.01deg, rgba(36, 0, 255, 0.46) -9.49%, #0009E0 146.9%);
+    ;
+    border: solid 1px black;
+    width: 100%;
+} 
+
+.img-accueil{
+    height: 70%;
+    width: 50%;
+}
+.console{
+    margin-left: 20%;
+    text-align: justify;
+    font-size: small;
+}
+.lien-console{
+    color: white;
+}
+.disponible {
+    color: hwb(128 18% 0%);
+
+}
+
+
+.disponible span{
+    color: rgb(255, 93, 19);
+}
+
+.card-titre {
+    text-align: center;
+}
+.milieu{
+    align-items: center;
+    display: block;
+    align-items: flex-start;
+    margin-bottom: 5%;
+}
+
+
+.verticalcentre{
+
+    vertical-align: middle;
+}
+
+.card{
+    left: 33%;
+}
+
+.start{
+    display: flex;
+    align-items: flex-start;
+}
+
+.bordure{
+   align-items: center;
+}
+
+.border{
+    border: solid 2px black;
+}
+
+.blanc{
+    color: white;
+}
+.noir{
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.gris{
+    color: rgb(35, 31, 31) !important;
+}
+
+.top{
+    margin-top: 2%;
+}
+.left{
+    margin-left: 5%;
+}
+
+.centre{
+    text-align: center !important;
+}
+.item{
+	align-items: center;
+}
+.demi{
+    height:fit-content;
+}
+
+.bgcont{
+    background-color: rgb(118, 118, 118);
+    
+}
+
+.container3{
+    align-items: center !important;
+    margin-left: 22.5%;
+}
+
+.foot{
+    background-color: #0009E0;
+}
+
+.taille{
+    font-size: small;
+}
+
+.borderbot{
+    border: solid 2.5px rgb(0, 0, 0);
+    
+}
+
+.bordertop{
+    /* border-top: solid 2px black; */
+    border: solid 2px black;
+}
+.eti{
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.172), rgba(0, 0, 0, 0.304)),
+    linear-gradient(90.01deg, rgba(0, 0, 0, 0.344) -9.49%, #00000068 146.9%lien-console);
+}
+.etq{
+    background: linear-gradient(0deg, rgba(139, 75, 75, 0.172), rgba(174, 116, 1, 0.115)),
+    linear-gradient(90.01deg, rgba(24, 159, 121, 0.13) -9.49%, #3eb36f10 146.9%);
+}
+
+
+.right{margin-right: 17%;}
+
+
+
+.icon{
+    height: 80px;
+    width: 80px;
+}
+
+.marque{
+    display: block;
+    text-align: center;
+    margin-right: 69% !important;
+}
+/*==================================================*/
+/*==================================================*/
+/*==================================================*/
+
+
+
+@font-face {
+    font-family: "Quicksand";
+    src: url(https://fonts.google.com/specimen/Quicksand?utm_source=bdmtools&utm_medium=siteweb&utm_campaign=google-fonts&preview.text=Accueil&preview.text_type=custom);
+}
+
+.police{
+    font-family:"Quickstand";
+}
+
+.maxleft{
+    margin-left: 10%;
+}
+
+.btnsupp{
+	width: 20% !important;
+}
+
+
+/*=================== CSS ==================*/ 
+.bgconsole{	
+	background-image: url(/images/fond.jpg);
+	width: 100%;
+	display: block;
+	
+}
+
+.bot{
+    margin-bottom: 2.5%;
+}
+
+.bgpanier{
+    background-image: url(/images/fond2.jpg);
+}
+.borderpanier{
+    border: solid 3px black;
+}

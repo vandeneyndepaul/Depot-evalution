@@ -1,0 +1,32 @@
+DROP DATABASE Exo1BDD;
+
+CREATE DATABASE Exo1BDD;
+
+USE Exo1BDD;
+
+
+CREATE TABLE Personne(
+per_num INT AUTO_INCREMENT PRIMARY KEY,
+per_nom CHAR(50),
+per_prenom CHAR(50),
+per_adresse CHAR(50),	
+per_ville	CHAR(50)
+
+);
+
+
+CREATE TABLE Groupe(
+gro_num INT AUTO_INCREMENT PRIMARY KEY,
+gro_libelle CHAR(50)
+
+);
+
+
+CREATE TABLE Appartient (
+per_num INT,
+gro_num INT,
+FOREIGN KEY (per_num) REFERENCES Personne(per_num),
+FOREIGN KEY (gro_num) REFERENCES Groupe(gro_num),
+PRIMARY KEY (per_num, gro_num)
+
+);

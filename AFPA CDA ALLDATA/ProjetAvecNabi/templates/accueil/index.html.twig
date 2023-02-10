@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Page Accueil{% endblock %}
+
+{% block body %}
+    <br>
+
+
+
+<br>
+<div class="border align bgconsole borderbox">
+<h1 class="centre blanc police">Selectionner votre console :</h1><br>
+<div class="row ">
+{% for cat in tableau %}
+<div class="col-1 maxleft"></div>
+<div class="col-2  bot">
+  <a href="/categorie/{{cat.id}}" class="gris">
+  <div class="card navbarsite gris" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+      <img src="/images/{{cat.imgSource}}" class="img-fluid img-card verticalcentre" alt="Ps5">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body card-titre">
+          <h5 class="card-title ">{{cat.TypeSupport}}</h5>
+          <p class="card-text">À partir de €349,00 <br>Prix régulier €749,00</p>
+          <p class="card-text"><h6></h6>STOCK LIMITÉ <br>Découvrez en exclusivité la {{cat.TypeSupport}} </p>
+          <p class="card-text "><small class="disponible border">Disponible <br><span>Ruprutre de stocks</span></small></p>
+        </div>
+      </div>
+    </div></a>
+  </div>
+</div>
+{% endfor %}
+</div>
+</div>
+
+
+
+{% endblock %}
